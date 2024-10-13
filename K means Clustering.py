@@ -1,3 +1,47 @@
+
+("I wrote the code myself and had a friend with me, but I got the description written by ChatGPT.")
+
+This code is very best if you are familier with python, numpy and maths function
+
+K-Means Clustering Code Description 
+This Python script implements a K-Means clustering algorithm using NumPy and scikit-learn libraries. The code follows an object-oriented approach with a KMeansModel class that encapsulates the main functionality of the algorithm. Below are the key components and functionalities of the code:
+
+Imports
+NumPy: For numerical operations and array manipulations.
+Matplotlib: For data visualization (though plotting is currently commented out).
+scikit-learn: To generate synthetic datasets and preprocess data.
+Math Library: For mathematical functions, specifically for calculating the Euclidean distance.
+Metrics: To evaluate clustering performance using confusion matrices and accuracy scores.
+KMeansModel Class
+Initialization (__init__):
+
+Takes the number of clusters (K_clusters) and input data (X) as parameters.
+Initializes random cluster centers and normalizes the input data using Min-Max scaling.
+Distance Calculation:
+
+GetEuclideanDistance(v1, v2): Computes the Euclidean distance between two vectors.
+FindClosestCentre(v1): Identifies the index of the nearest cluster center to a given data point.
+Cluster Mapping:
+
+MapClosestCentre(): Assigns each data point to its closest cluster center, updating the class membership.
+Normalization:
+
+Normalize(): Scales the input features to the range [0, 1] to improve clustering performance.
+Centroid Updating:
+
+ChangeCentres(): Recalculates the positions of cluster centers by averaging the positions of data points assigned to each cluster.
+Main Execution
+Generates synthetic data using make_blobs, creating a dataset with 1000 samples, 10 features, and 2 clusters.
+Instantiates the KMeansModel class and performs clustering by iteratively updating cluster centers and class assignments.
+Evaluates clustering performance by comparing predicted classes to the actual labels using a confusion matrix and accuracy score.
+Output
+Displays the predicted classes alongside the actual labels in a concatenated array.
+Prints the confusion matrix and accuracy percentage of the clustering results.
+
+
+This is a code
+
+
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.datasets import make_blobs
@@ -83,3 +127,4 @@ if __name__ == "__main__":
     print(np.concatenate((pred, act), axis=1))
     print(confusion_matrix(pred, act))
     print(accuracy_score(pred, act) * 100, "%")
+    
